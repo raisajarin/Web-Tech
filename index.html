@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>First Web Page</title>
     <link rel="icon" type="image/jpg" href="logo.jpg">
@@ -9,13 +10,14 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
+            border-radius: 50%;
         }
     </style>
 
     <style>
         .flex-container {
             background-color: lightskyblue;
-            margin: 50px;
+            margin: 30px;
             padding: 00px;
         }
     </style>
@@ -23,14 +25,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <img src="logo.jpg" alt="logo" width="50" height="50" class="centerImage">
     <h1 align="center">First Page</h1>
     <div class="flex-container">
-        <div style="background-color: aqua; height: 350px; width: 250px;">
-        </div>
-        <div style="background-color: bisque; height: 100px; width: 250px;">
+        <div style="background-color: aqua; height: 600px; width: 250px;">
+            <form>
+                <h4 align="center">User Registration</h4>
+                <label for="fname">Full name:</label><br>
+                <input type="text" id="fname" name="fname"><br>
+                <label for="femail">Email:</label><br>
+                <input type="email" id="femail" name="femail"><br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password"><br>
+                <label for="confirm_password">Confirm Password:</label><br>
+                <input type="password" id="confirm_password" name="confirm_password"><br>
+                <label for="dob">Date of Birth:</label><br>
+                <input type="date" id="dob" name="dob"><br>
+                <label for="country">Country:</label><br>
+                <select id="country" name="country">
+                    <option value=""></option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Australia">Australia</option>
+                </select><br>
+                <label>Gender:</label><br>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Other</label><br><br>
+                <div class="terms">
+                    <input type="checkbox" id="terms" name="terms">
+                    <label for="terms">I agree to the <a href="https://www.example.com/terms" target="_blank">terms and conditions</a></label><br><br>
+                <input type="submit" value="Submit">
+
+            </form>
+        </div><br>
+        <div style="background-color: bisque; height: 150px; width: 250px;">
         </div>
     </div>
 </body>
+
 </html>
