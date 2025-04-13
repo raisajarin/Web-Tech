@@ -2,54 +2,67 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>First Web Page</title>
     <link rel="icon" type="image/jpg" href="logo.jpg">
 
     <style>
         .centerImage {
             display: block;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 20px auto;
             border-radius: 50%;
         }
-    </style>
 
-    <style>
         .flex-container {
             background-color: lightskyblue;
             margin: 30px;
             padding: 00px;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .registration-form {
+            background-color: aqua;
+            height: auto;
+            width: 250px;
+            padding: 20px;
+            margin-bottom: 00px;
         }
     </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 </head>
 
 <body>
     <img src="logo.jpg" alt="logo" width="50" height="50" class="centerImage">
     <h1 align="center">First Page</h1>
     <div class="flex-container">
-        <div style="background-color: aqua; height: 600px; width: 250px;">
+        <div class="registration-form">
             <form>
-                <h4 align="center">User Registration</h4>
+                <h4>User Registration</h4>
                 <label for="fname">Full name:</label><br>
                 <input type="text" id="fname" name="fname"><br>
+
                 <label for="femail">Email:</label><br>
                 <input type="email" id="femail" name="femail"><br>
+
                 <label for="password">Password:</label><br>
                 <input type="password" id="password" name="password"><br>
+
                 <label for="confirm_password">Confirm Password:</label><br>
                 <input type="password" id="confirm_password" name="confirm_password"><br>
+
                 <label for="dob">Date of Birth:</label><br>
                 <input type="date" id="dob" name="dob"><br>
+
                 <label for="country">Country:</label><br>
                 <select id="country" name="country">
-                    <option value=""></option>
+                    <option value="">Select Country</option>
                     <option value="UK">United Kingdom</option>
                     <option value="Canada">Canada</option>
                     <option value="Australia">Australia</option>
                 </select><br>
+
                 <label>Gender:</label><br>
                 <input type="radio" id="male" name="gender" value="male">
                 <label for="male">Male</label><br>
@@ -57,16 +70,44 @@
                 <label for="female">Female</label><br>
                 <input type="radio" id="other" name="gender" value="other">
                 <label for="other">Other</label><br><br>
+
+                <label for="userColor">Choose Background Color:</label><br>
+                <input type="color" id="userColor" name="userColor"><br>
+
                 <div class="terms">
                     <input type="checkbox" id="terms" name="terms">
-                    <label for="terms">I agree to the <a href="https://www.example.com/terms" target="_blank">terms and conditions</a></label><br><br>
-                <input type="submit" value="Submit">
+                    <label for="terms">I agree to the <a href="https://www.example.com/terms" target="_blank">terms and
+                            conditions</a></label><br><br>
+                </div>
 
+                <input type="submit" value="Submit">
             </form>
-        </div><br>
-        <div style="background-color: bisque; height: 150px; width: 250px;">
+        </div>
+
+        <div style="background-color: bisque; height: 200px; width: 290px;">
         </div>
     </div>
+    <script>
+        document.querySelector("form").addEventListener("submit", function (event) 
+        {
+            var fullName = document.getElementById("fname").value;
+            var namePattern = /^[A-Za-z\s]+$/;
+            if (!namePattern.test(fullName))
+            {
+                alert("Please enter a valid name with letters only. No numbers or special characters allowed.");
+                event.preventDefault();
+            }
+
+            var email = document.getElementById("femail").value;
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.(com)$/;
+            if (!emailPattern.test(email)) 
+            {
+                alert("Please enter a valid email address (must contain '@' and end with '.com').");
+                event.preventDefault();
+            }
+        });
+    </script>
+
 </body>
 
 </html>
