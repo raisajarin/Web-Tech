@@ -6,31 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>First Web Page</title>
     <link rel="icon" type="image/jpg" href="logo.jpg">
-
-    <style>
-        .centerImage {
-            display: block;
-            margin: 20px auto;
-            border-radius: 50%;
-        }
-
-        .flex-container {
-            background-color: lightskyblue;
-            margin: 30px;
-            padding: 00px;
-            display: flex;
-            flex-direction: column;
-
-        }
-
-        .registration-form {
-            background-color: aqua;
-            height: auto;
-            width: 250px;
-            padding: 20px;
-            margin-bottom: 00px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -39,7 +15,7 @@
     <div class="flex-container">
         <div class="registration-form">
             <form>
-                <h4>User Registration</h4>
+                <h3 align="center">User Registration</h3>
                 <label for="fname">Full name:</label><br>
                 <input type="text" id="fname" name="fname"><br>
 
@@ -67,47 +43,56 @@
                 <input type="radio" id="male" name="gender" value="male">
                 <label for="male">Male</label><br>
                 <input type="radio" id="female" name="gender" value="female">
-                <label for="female">Female</label><br>
-                <input type="radio" id="other" name="gender" value="other">
-                <label for="other">Other</label><br><br>
+                <label for="female">Female</label><br><br>
 
                 <label for="userColor">Choose Background Color:</label><br>
                 <input type="color" id="userColor" name="userColor"><br>
 
                 <div class="terms">
-                    <input type="checkbox" id="terms" name="terms">
-                    <label for="terms">I agree to the <a href="https://www.example.com/terms" target="_blank">terms and
-                            conditions</a></label><br><br>
+                    <input type="checkbox" id="terms" name="terms" value="yes">
+                    <label for="terms">I agree to the <a href="https://www.example.com/terms" target="_blank">terms and conditions</a></label><br><br>
                 </div>
 
-                <input type="submit" value="Submit">
+                <button type="submit" class="reg-button" onclick="return validation()">Submit</button>
             </form>
         </div>
+        <div class="login-container">
+            <form>
+            <h3 align="center">Login</h3>
+            <label for="login-email">Email:</label><br>
+            <input type="email" id="login-email" name="login-email"><br>
+      
+            <label for="login-password">Password:</label><br>
+            <input type="password" id="login-password" name="login-password"><br><br>
 
-        <div style="background-color: bisque; height: 200px; width: 290px;">
+            <button type="submit" class="login-button" onclick="return login()">Login</button>
+            </form>
+        </div>
+        <div class="table-container">
+            <h3>AQI</h3>
+    <table>
+        <thead>
+        <tr>
+            <th>Country</th><th>Index</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr><td>USA</td><td>55</td></tr>
+            <tr><td>UAE</td><td>23</td></tr>
+            <tr><td>UK</td><td>78</td></tr>
+            <tr><td>Australia</td><td>13</td></tr>
+            <tr><td>Canada</td><td>33</td></tr>
+            <tr><td>Bangladesh</td><td>26</td></tr>
+            <tr><td>Japan</td><td>47</td></tr>
+            <tr><td>Malaysia</td><td>38</td></tr>
+            <tr><td>Nepal</td><td>51</td></tr>
+            <tr><td>Bhutan</td><td>3</td></tr>
+        </tbody>
+    </table>
+
         </div>
     </div>
-    <script>
-        document.querySelector("form").addEventListener("submit", function (event) 
-        {
-            var fullName = document.getElementById("fname").value;
-            var namePattern = /^[A-Za-z\s]+$/;
-            if (!namePattern.test(fullName))
-            {
-                alert("Please enter a valid name with letters only. No numbers or special characters allowed.");
-                event.preventDefault();
-            }
-
-            var email = document.getElementById("femail").value;
-            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.(com)$/;
-            if (!emailPattern.test(email)) 
-            {
-                alert("Please enter a valid email address (must contain '@' and end with '.com').");
-                event.preventDefault();
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
-
 </html>

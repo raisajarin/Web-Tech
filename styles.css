@@ -1,0 +1,38 @@
+.centerImage {
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%;
+}
+.flex-container {
+    background-color: #9AC8E5;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    height: 500;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+
+}
+.registration-form {
+    background-color: #D1C2C2 ;
+    height: auto;
+    width: 250px;
+    padding: 20px;
+    margin: 00px;
+}
+.login-container {
+    background-color: bisque;
+    width: 250px;
+    padding: 20px;
+   margin: 0px;
+}
+.table-container {
+    width: 250px;
+    padding: 200px;
+   margin: 0px;
+}
+
+
+  
